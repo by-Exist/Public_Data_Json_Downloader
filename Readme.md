@@ -1,5 +1,5 @@
 # 무엇인가요?
-공공데이터포털에서 REST API 형식으로 제공되는 Json 형식의 문자열을 파이썬에서 다루기 위해 짠 코드입니다.
+공공데이터포털에서 REST API 형식으로 제공되는 Json 형식의 문자열을 가공하기 쉬운 형태로 변경하기 위해 파이썬으로 작성되었습니다.
 
 ## [api_downloader.py](https://github.com/by-Exist/Public_Data_Json_Downloader/blob/master/api_downloader.py)
   공공데이터포털에서 REST 형식으로 전달받은 json 문자열을 dict로 가공하여 pickle파일로 저장합니다.
