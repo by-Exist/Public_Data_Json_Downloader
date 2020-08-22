@@ -6,7 +6,7 @@ import re
 
 
 
-start_low = 1    # 요청 시작 위치, 최신 다운로드 파일명에 따라 변경.
+start_low = 1    # 요청 시작 위치, 최신 다운로드 파일명에 따라 자동으로 변경.
 LOAD_SIZE = 1000    # 요청 데이터 길이
 SAVE_CYCLE = 5    # 저장 반복 주기
 
@@ -14,9 +14,9 @@ FILE_NAME = "product_{}.pickle"    # 저장 파일명 형식
 FOLDER_NAME = "products"    # 파일 저장 폴더명
 file_start_number = 1    # 파일 넘버링 시작 숫자, 최신 다운로드 파일명에 따라 변경.
 
-URL_FMT = """......{}..{}"""    # API 데이터 요청 URL 형식
+URL_FMT = """......{}/{}"""    # API 데이터 요청 URL 형식, 형식에 맞게 수정.
 
-# API Message 종류
+# API Message 종류, 형식에 맞게 수정.
 API_MESSAGE = {
     "INFO-000": "정상 처리되었습니다.",
     "ERROR-300": "필수 값이 누락되어 있습니다. 요청인자를 참고 하십시오.",
@@ -69,7 +69,7 @@ def add_info(save_dict, product_dict):
     save_dict[product_number] = product_name, material_names, company_name
 
 def save_and_clear(obj, file_name):
-    """obj을 pickle 파일로 저장하고 초기화시키는 함수"""
+    """dict를 pickle 파일로 저장하고 비우는 함수"""
     with open(file_name, 'wb') as f:
         pickle.dump(obj, f, protocol=pickle.HIGHEST_PROTOCOL)
     obj.clear()
